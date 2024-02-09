@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplos de Cenários de Banco de Dados</title>
+</head>
+<body>
+    <h2>Selecione um Cenário</h2>
+    <select id="selectCenario" onchange="mostrarConsulta()">
+        <option value="">Selecione...</option>
+        <option value="1">Biblioteca</option>
+        <option value="2">Escola</option>
+        <option value="3">Loja Online</option>
+        <option value="4">Sistema de Reservas</option>
+        <option value="5">Clínica Médica</option>
+        <option value="6">Empresa e Funcionários</option>
+        <option value="7">Sistema de Vendas</option>
+        <option value="8">Site de Notícias</option>
+        <option value="9">Sistema de Gestão de Projetos</option>
+        <option value="10">Rede Social</option>
+        <option value="11">Sistema de Aluguel de Carros</option>
+        <option value="12">Sistema de Pedidos de Restaurante</option>
+        <option value="13">Sistema de Bilhetes de Cinema</option>
+        <option value="14">Sistema de Gerenciamento de Hotéis</option>
+        <option value="15">Sistema de Controle de Estoque</option>
+    </select>
+
+    <div id="detalhesCenario" style="margin-top: 20px;">
+        <!-- Detalhes do cenário e consulta serão exibidos aqui -->
+    </div>
+
+    <script>
+        function mostrarConsulta() {
+            var cenarios = {
+                "1": {"titulo": "Biblioteca", "consulta": "Selecionar todos os livros de um determinado autor."},
+                "2": {"titulo": "Escola", "consulta": "Selecionar todos os alunos de uma turma específica."},
+                "3": {"titulo": "Loja Online", "consulta": "Selecionar todos os produtos de uma determinada categoria."},
+                "4": {"titulo": "Sistema de Reservas", "consulta": "Selecionar todas as reservas para um determinado quarto."},
+                "5": {"titulo": "Clínica Médica", "consulta": "Selecionar todas as consultas de um determinado paciente."},
+                "6": {"titulo": "Empresa e Funcionários", "consulta": "Selecionar todos os funcionários de um determinado departamento."},
+                "7": {"titulo": "Sistema de Vendas", "consulta": "Selecionar todas as vendas feitas por um determinado cliente."},
+                "8": {"titulo": "Site de Notícias", "consulta": "Selecionar todos os artigos escritos por um determinado jornalista."},
+                "9": {"titulo": "Sistema de Gestão de Projetos", "consulta": "Selecionar todos os empregados trabalhando em um determinado projeto."},
+                "10": {"titulo": "Rede Social", "consulta": "Selecionar todos os posts de um determinado usuário."},
+                "11": {"titulo": "Sistema de Aluguel de Carros", "consulta": "Selecionar todos os carros alugados por um determinado cliente."},
+                "12": {"titulo": "Sistema de Pedidos de Restaurante", "consulta": "Selecionar todos os pedidos para uma determinada mesa."},
+                "13": {"titulo": "Sistema de Bilhetes de Cinema", "consulta": "Selecionar todos os bilhetes vendidos para um determinado filme."},
+                "14": {"titulo": "Sistema de Gerenciamento de Hotéis", "consulta": "Selecionar todas as reservas feitas por um determinado hóspede."},
+                "15": {"titulo": "Sistema de Controle de Estoque", "consulta": "Selecionar todos os produtos fornecidos por um determinado fornecedor."}
+            };
+
+            var selecionado = document.getElementById("selectCenario").value;
+            var detalhes = cenarios[selecionado];
+            var detalhesDiv = document.getElementById("detalhesCenario");
+
+            if (detalhes) {
+                detalhesDiv.innerHTML = `<h3>${detalhes.titulo}</h3><p>${detalhes.consulta}</p>`;
+            } else {
+                detalhesDiv.innerHTML = ""; // Limpa se não houver seleção
+            }
+        }
+    </script>
+</body>
+</html>
